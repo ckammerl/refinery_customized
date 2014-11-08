@@ -1,0 +1,102 @@
+<!-- PageParts -->
+
+<div>
+  <section id='event_headline'>
+    <%=raw @page.content_for(:event_headline) %>
+  </section>
+</div>
+
+<% content_for :body do %>
+  <ul id="termine_aktuelles">
+    <% last_month = 0 %>
+    <% @termine_aktuelles.each do |termine_aktuelle| %>
+    <% current_month = termine_aktuelle.start_date.month %>
+       <% if last_month != current_month %>
+        <div class='inner-event-container new_month'>
+          <li class="month_of_events">
+            <div class="month">
+                <%=raw I18n.l(termine_aktuelle.start_date, :format => "%B", :locale => :de) %>
+            </div>
+         </li>
+        <% else %>
+         <div class='inner-event-container'>
+          <li>
+           <section id='event_placeholder'>
+              <%=raw @page.content_for(:event_placeholder) %>
+          </section>
+          </li>
+       <% end %>
+    <% last_month = current_month %>
+
+    <li class="content_left">
+      <section>
+        <% if termine_aktuelle.start_date == termine_aktuelle.end_date %>
+          <div class="dark_green">
+            <div><span class="light_green"><%=raw I18n.l(termine_aktuelle.start_date, :format => "%A, ", :locale => :de) %></span>
+            <%=raw I18n.l(termine_aktuelle.start_date, :format => "%d. %B %Y", :locale => :de) %></div>
+          </div>
+        <% else %>
+          <div class="dark_green">
+            <% if termine_aktuelle.start_date.strftime("%Y") == termine_aktuelle.end_date.strftime("%Y")%>
+              <% if termine_aktuelle.start_date.strftime("%B") == termine_aktuelle.end_date.strftime("%B")%>
+                <div><span class="light_green">Wochenende, </span> <%= raw I18n.l(termine_aktuelle.start_date, :format => "%d. ",  :locale => :de) %> - <%=raw I18n.l(termine_aktuelle.end_date, :format => " %d. %B %Y", :locale => :de) %> </div>
+              <% else %>
+                 <div><span class="light_green">Wochenende, </span> <%= raw I18n.l(termine_aktuelle.start_date, :format => "%d. %B",  :locale => :de) %> - <%=raw I18n.l(termine_aktuelle.end_date, :format => " %d. %B %Y", :locale => :de) %> </div>
+              <% end %>
+            <% else %>
+              <%= raw I18n.l(termine_aktuelle.start_date, :format => "%d. %B %Y ",  :locale => :de) %> - <%=raw I18n.l(termine_aktuelle.end_date, :format => " %d. %B %Y", :locale => :de) %>
+            <% end %>
+          </div>
+        <% end %>
+      </section>
+      <section>
+        <h1>Location</h1>
+        <div class="grey">
+          <%=raw termine_aktuelle.location %>
+        </div>
+      </section>
+      <section>
+        <% if termine_aktuelle.start_time == termine_aktuelle.end_time %>
+          <p>
+            Begin <%=raw termine_aktuelle.start_time.strftime("%H:%M ") + "Uhr" %>
+          </p>
+        <% else %>
+           <p>
+            <%=raw termine_aktuelle.start_time.strftime("%H:%M ") + "Uhr" %> bis <%=raw termine_aktuelle.end_time.strftime("%H:%M ") + "Uhr" %>
+          </p>
+        <% end %>
+      </section>
+    </li>
+
+    <li class="content_right">
+     <section>
+        <h1>Title</h1>
+        <div class="event_title">
+          <%=raw termine_aktuelle.title %>
+        </div>
+      </section>
+      <section>
+        <h1>Subtitle</h1>
+        <div class="event_subtitle">
+          <%=raw termine_aktuelle.subtitle %>
+        </div>
+      </section>
+      <section>
+        <h1>Description</h1>
+        <p>
+          <%=raw termine_aktuelle.description %>
+        </p>
+      </section>
+    </li>
+   </div> <!-- inner-event-container -->
+  <% end %>
+ </ul>
+<% end %>
+<p class="clearfix"></p>
+
+
+
+
+
+<%= render '/refinery/content_page' %>
+

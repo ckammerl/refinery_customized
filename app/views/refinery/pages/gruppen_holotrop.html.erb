@@ -1,0 +1,78 @@
+<!-- PageParts -->
+
+<div class="container">
+  <section id='placeholder'>
+    <%=raw @page.content_for(:placeholder) %>
+  </section>
+  <section id='headline'>
+    <%=raw @page.content_for(:headline) %>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div class="large">
+      <%=raw @page.content_for(:img_box_1) %>
+  </div>
+  <section class="text_box">
+    <div class="gruppen_title">
+      <%=raw @page.content_for(:title) %>
+    </div>
+    <div class="gruppen-subtitle">
+      <%=raw @page.content_for(:subtitle) %>
+    </div>
+    <div>
+      <%=raw @page.content_for(:text_1) %>
+    </div>
+    <div id="gruppen_holotrop_txt_img_wrapper">
+      <ul>
+        <li class="img">
+          <%=raw @page.content_for(:img_box_small) %>
+        </li>
+        <li class="txt">
+          <%=raw @page.content_for(:text_2) %>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <%=raw @page.content_for(:text_3) %>
+    </div>
+    <div class="gruppen_subheadline">Für Menschen:</div>
+    <ul>
+      <li>
+        auf der Suche nach ihrem eigenen Potential und der Tiefendimension im Leben
+      </li>
+      <li>
+        die unerlöste Konflikte in sich tragen und nach neuen Wegen suchen, mit alten Lebensmustern umzugehen
+      </li>
+      <li>
+        die Unterstützung in Abschieds- Trennungs- und Trauerzeiten suchen
+      </li>
+      <li>
+        die Unterstützung auf ihrem spirituellen Weg suchen und ihre Erfahrungen vertiefen und integrieren möchten
+      </li>
+    </ul>
+
+    <div class="gruppen_subheadline">Empfohlene Literatur:</div>
+    <ul>
+      <li>
+        Das Abenteuer der Selbstentdeckung, Stanislav Grof
+      </li>
+      <li>
+        Geh den Weg des Herzens, Jack Kornfield
+      </li>
+    </ul>
+
+    <div class="gruppen_subheadline">Leitung des Seminars:</div>
+    <div>Marianne Schemmer, Certified Holotropic Breathwork Praktitioner.</div>
+    <div>Dipl. Sozialarbeiterin und Therapeutin.</div>
+
+    <p class="gruppen_subheadline">
+      Diese Seminare werden nach den Richtlinien des Grof-Transpersonal-Trainings durchgeführt und können für eine Ausbildung angerechnet werden.
+    </p>
+  </section> <!-- text_box -->
+  <p class="clearfix"></p>
+
+</div> <!-- inner-container -->
+
+
+

@@ -1,0 +1,35 @@
+es:
+  refinery:
+    plugins:
+      termine_aktuelles:
+        title: Termine Aktuelles
+#        article: masculino/femenino
+    termine_aktuelles:
+      admin:
+        termine_aktuelles:
+          actions:
+            create_new: Crear nuevo termine aktuelle
+            reorder: Reordenar termine aktuelles
+            reorder_done: Reordenación de termine aktuelles completada
+          records:
+            title: Termine Aktuelles
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay termine aktuelles todavía. Pulsa en "Crear nuevo Termine Aktuelle" para crear tu primer termine aktuelle.
+          termine_aktuelle:
+            view_live_html: Ver este termine aktuelle como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este termine aktuelle
+            delete: Borrar este termine aktuelle para siempre
+      termine_aktuelles:
+        show:
+          other: Otros termine aktuelles
+  activerecord:
+    attributes:
+      'refinery/termine_aktuelles/termine_aktuelle':
+        title: Title
+        subtitle: Subtitle
+        location: Location
+        description: Description
+        start_date: Start Date
+        end_date: End Date
+        start_time: Start Time
+        end_time: End Time

@@ -1,0 +1,72 @@
+<!-- PageParts -->
+<div class="container">
+  <section id='placeholder'>
+    <%=raw @page.content_for(:placeholder) %>
+  </section>
+  <section id='headline'>
+    <%=raw @page.content_for(:headline) %>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div>
+    <section id='img_box_1' class="small">
+      <%=raw @page.content_for(:img_box_1) %>
+    </section>
+  </div>
+  <section class="text_box">
+    <div class="gruppen_title">
+      <%=raw @page.content_for(:title) %>
+    </div>
+    <div class="gruppen-subtitle">
+      <%=raw @page.content_for(:subtitle) %>
+    </div>
+    <div>
+      <%=raw @page.content_for(:text_1) %>
+    </div>
+  </section> <!-- text_box -->
+</div> <!-- inner-container -->
+
+
+<div class="inner-container">
+   <section id='placeholder'>
+    <%=raw @page.content_for(:placeholder) %>
+  </section>
+  <section class='text_box'>
+    <div class="gruppen-subtitle">
+      Seelenbilder / <strong>Maltag</strong>
+    </div>
+    <%=raw @page.content_for(:text_2) %>
+    <p>
+      Vorkenntnisse sind nicht erforderlich.
+    </p>
+    <div class="internal_link">
+      <a href="/termine_aktuelles" title="Termine - Aktuelles">Termine</a>
+    </div>
+    <br/>
+  </section> <!-- text_box -->
+</div> <!-- inner-container -->
+
+
+<div class="inner-container">
+   <section id='placeholder'>
+    <%=raw @page.content_for(:placeholder) %>
+  </section>
+  <section class='text_box'>
+    <div class="gruppen-subtitle">Seelenbilder / <strong>Malwochenende</strong>
+    </div>
+    <%=raw @page.content_for(:text_3) %>
+    <p>
+      Vorkenntnisse sind nicht erforderlich.
+    </p>
+    <div class="internal_link">
+      <a href="/termine_aktuelles" title="Termine - Aktuelles">Termine</a>
+    </div>
+    <br/><br/>
+    <div class="gruppen-subtitle">
+      „Wenn alle Kursteilnehmer ganz vertieft ins Malen sind, wachsen Stille und Dichte.“
+    </div>
+    <div id="quote-name">Katharina Shepherd</div>
+  </section> <!-- text_box -->
+  <p class="clearfix"></p>
+</div> <!-- inner-container -->

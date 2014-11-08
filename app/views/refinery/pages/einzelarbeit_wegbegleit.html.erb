@@ -1,0 +1,26 @@
+<!-- PageParts -->
+<div class="container">
+  <section id='placeholder'>
+    <%=raw @page.content_for(:placeholder) %>
+  </section>
+  <section id='headline'>
+    <%=raw @page.content_for(:headline) %>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div>
+    <section id='img_box_1' class="large">
+      <%=raw @page.content_for(:img_box_1) %>
+    </section>
+  </div>
+  <section class='text_box'>
+    <%=raw @page.content_for(:text_box_1) %>
+  </section>
+  <p class="clearfix"></p>
+</div> <!-- inner-container -->
+
+
+
+
+

@@ -1,0 +1,69 @@
+<% content_for :body_content_title do %>
+  <%= @termine_aktuelle.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @termine_aktuelle.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Subtitle</h1>
+    <p>
+      <%=raw @termine_aktuelle.subtitle %>
+    </p>
+  </section>
+  <section>
+    <h1>Location</h1>
+    <p>
+      <%=raw @termine_aktuelle.location %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @termine_aktuelle.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Start Date</h1>
+    <p>
+      <%=raw @termine_aktuelle.start_date.strftime("%A, %d.%B") %>
+    </p>
+  </section>
+  <section>
+    <h1>End Date</h1>
+    <p>
+      <%=raw @termine_aktuelle.end_date.strftime("%A, %d.%B") %>
+    </p>
+  </section>
+  <section>
+    <h1>Start Time</h1>
+    <p>
+      <%=raw @termine_aktuelle.start_time.strftime("%H:%M ") + "Uhr" %>
+    </p>
+  </section>
+  <section>
+    <h1>End Time</h1>
+    <p>
+      <%=raw @termine_aktuelle.end_time.strftime("%H:%M ") + "Uhr" %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="termine_aktuelles">
+      <% @termine_aktuelles.each do |termine_aktuelle| %>
+        <li>
+          <%= link_to termine_aktuelle.title, refinery.termine_aktuelles_termine_aktuelle_path(termine_aktuelle) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,60 @@
+<%= form_for [refinery, :termine_aktuelles_admin, @termine_aktuelle] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @termine_aktuelle,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :subtitle -%>
+    <%= f.text_field :subtitle -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :location -%>
+    <%= f.text_field :location -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:description],
+                :object => "termine_aktuelles/termine_aktuelle" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :start_date -%>
+    <%= f.date_select :start_date -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :end_date -%>
+    <%= f.date_select :end_date -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :start_time -%>
+    <%= f.time_select :start_time -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :end_time -%>
+    <%= f.time_select :end_time -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.termine_aktuelles.admin.termine_aktuelles.termine_aktuelle'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @termine_aktuelle.title) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

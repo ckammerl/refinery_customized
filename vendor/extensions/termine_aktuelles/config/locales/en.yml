@@ -1,0 +1,34 @@
+en:
+  refinery:
+    plugins:
+      termine_aktuelles:
+        title: Termine Aktuelles
+    termine_aktuelles:
+      admin:
+        termine_aktuelles:
+          actions:
+            create_new: Add New Termine Aktuelle
+            reorder: Reorder Termine Aktuelles
+            reorder_done: Done Reordering Termine Aktuelles
+          records:
+            title: Termine Aktuelles
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Termine Aktuelles yet. Click "Add New Termine Aktuelle" to add your first termine aktuelle.
+          termine_aktuelle:
+            view_live_html: View this termine aktuelle live <br/><em>(opens in a new window)</em>
+            edit: Edit this termine aktuelle
+            delete: Remove this termine aktuelle forever
+      termine_aktuelles:
+        show:
+          other: Other Termine Aktuelles
+  activerecord:
+    attributes:
+      'refinery/termine_aktuelles/termine_aktuelle':
+        title: Title
+        subtitle: Subtitle
+        location: Location
+        description: Description
+        start_date: Start Date
+        end_date: End Date
+        start_time: Start Time
+        end_time: End Time

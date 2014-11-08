@@ -1,0 +1,34 @@
+nl:
+  refinery:
+    plugins:
+      termine_aktuelles:
+        title: Termine Aktuelles
+    termine_aktuelles:
+      admin:
+        termine_aktuelles:
+          actions:
+            create_new: Nieuwe Termine Aktuelle toevoegen
+            reorder: De volgorde van de Termine Aktuelles wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Termine Aktuelle-volgorde
+          records:
+            title: Termine Aktuelles
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Termine Aktuelles. Druk op 'Nieuwe Termine Aktuelle toevoegen' om de eerste toe te voegen.
+          termine_aktuelle:
+            view_live_html: Deze termine aktuelle op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze termine aktuelle
+            delete: Deze termine aktuelle definitief verwijderen
+      termine_aktuelles:
+        show:
+          other: Andere Termine Aktuelles
+  activerecord:
+    attributes:
+      'refinery/termine_aktuelles/termine_aktuelle':
+        title: Title
+        subtitle: Subtitle
+        location: Location
+        description: Description
+        start_date: Start Date
+        end_date: End Date
+        start_time: Start Time
+        end_time: End Time

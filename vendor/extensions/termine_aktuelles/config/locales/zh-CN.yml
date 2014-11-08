@@ -1,0 +1,36 @@
+zh-CN:
+  refinery:
+    plugins:
+      termine_aktuelles:
+        title: Termine Aktuelles
+    termine_aktuelles:
+      admin:
+        termine_aktuelles:
+          actions:
+            create_new: 建立新的 Termine Aktuelle
+            reorder: 对 Termine Aktuelles 重新排序
+            reorder_done: 对 Termine Aktuelles 的重新排序结束
+          records:
+            title: Termine Aktuelles
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Termine Aktuelles yet. Click "Add New Termine Aktuelle" to add your first termine aktuelle.
+            no_items_yet: 目前没有 Termine Aktuelles . 点击 "Add New Termine Aktuelle" 创建一个termine aktuelle.
+          termine_aktuelle:
+            view_live_html: 查看 termine aktuelle 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 termine aktuelle
+            delete: 永久删除 termine aktuelle
+      termine_aktuelles:
+        show:
+          other: 其他 Termine Aktuelles
+  activerecord:
+    attributes:
+      'refinery/termine_aktuelles/termine_aktuelle':
+        title: Title
+        subtitle: Subtitle
+        location: Location
+        description: Description
+        start_date: Start Date
+        end_date: End Date
+        start_time: Start Time
+        end_time: End Time

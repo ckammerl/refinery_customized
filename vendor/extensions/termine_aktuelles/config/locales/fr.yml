@@ -1,0 +1,34 @@
+fr:
+  refinery:
+    plugins:
+      termine_aktuelles:
+        title: Termine Aktuelles
+    termine_aktuelles:
+      admin:
+        termine_aktuelles:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Termine Aktuelle
+            reorder: Réordonner les Termine Aktuelles
+            reorder_done: Fin de réordonnancement des Termine Aktuelles
+          records:
+            title: Termine Aktuelles
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Termine Aktuelle. Cliquer sur "Créer un(e) nouve(au/l/lle) Termine Aktuelle" pour créer votre premi(er/ère) termine aktuelle.'
+          termine_aktuelle:
+            view_live_html: Voir ce(t/tte) termine aktuelle <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) termine aktuelle
+            delete: Supprimer définitivement ce(t/tte) termine aktuelle
+      termine_aktuelles:
+        show:
+          other: Autres Termine Aktuelles
+  activerecord:
+    attributes:
+      'refinery/termine_aktuelles/termine_aktuelle':
+        title: Title
+        subtitle: Subtitle
+        location: Location
+        description: Description
+        start_date: Start Date
+        end_date: End Date
+        start_time: Start Time
+        end_time: End Time

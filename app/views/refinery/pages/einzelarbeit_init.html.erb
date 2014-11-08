@@ -1,0 +1,51 @@
+<!-- PageParts -->
+<div class="container">
+  <section id='placeholder'>
+    <%=raw @page.content_for(:placeholder) %>
+  </section>
+  <section id='headline'>
+    <%=raw @page.content_for(:headline) %>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div>
+    <section id='img_box_1' class="small">
+      <%=raw @page.content_for(:img_box_1) %>
+    </section>
+  </div>
+  <section class='text_box'>
+    <h3>
+      Geführtes Zeichnen <span id="title-source">nach Dr. Maria Hippius-Gräfin Dürckheim</span>
+    </h3>
+    <%=raw @page.content_for(:text_box_1) %>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div>
+    <section id='img_box_2' class="small">
+      <%=raw @page.content_for(:img_box_2) %>
+    </section>
+  </div>
+  <section class='text_box'>
+    <h3>
+      Leibarbeit <span id="title-source">nach Karlfried Graf Dürckheim</span>
+    </h3>
+    <%=raw @page.content_for(:text_box_2) %>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div>
+    <section id='img_box_3' class="small">
+      <%=raw @page.content_for(:img_box_3) %>
+    </section>
+  </div>
+  <section class='text_box'>
+    <h3>Wegbegleitendes Gespräch</h3>
+    <%=raw @page.content_for(:text_box_3) %>
+  </section>
+  <p class="clearfix"></p>
+</div>
+

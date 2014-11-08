@@ -1,0 +1,62 @@
+<!-- PageParts -->
+<div class="container">
+  <section id='placeholder'>
+    <%=raw @page.content_for(:placeholder) %>
+  </section>
+  <section id='headline'>
+    <%=raw @page.content_for(:headline) %>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div>
+    <section id='img_box_1' class="small">
+      <%=raw @page.content_for(:img_box_1) %>
+    </section>
+  </div>
+  <section class='text_box'>
+    <%=raw @page.content_for(:text_box_1) %>
+    <p>
+      Dipl. Sozialarbeiterin und Krankenschwester mit therapeutischer Ausbildung:
+    </p>
+    <ul>
+      <li>Bioenergetik und Gestalttherapie</li>
+      <li>Arbeit am Tonfeld bei Prof. Deuser</li>
+      <li>Holotrope Atemarbeit bei Stanislav Grof</li>
+      <li>Initiatische Therapie nach Graf Dürckheim</li>
+    </ul>
+
+    <p>Fortbildungen in:</p>
+    <ul>
+      <li>Klientenzentrierter Gesprächsführung nach C. Rogers</li>
+      <li>Gewaltfreie Kommunikation nach M. Rosenberg</li>
+      <li>Ausdrucksmalen und Prozessorientierts Malen</li>
+      <li>Zen-Tuschmalerei nach Katharina Shephard</li>
+      <li>Meditation im Stil des ZEN</li>
+      <li>Trauerbegleitung</li>
+    </ul>
+
+    <p>
+      Regelmäßige Fortbildungen zu aktuellen Themen und Vertiefung auf meinen Fachgebieten.
+    </p>
+  </section>
+</div>
+
+<div class="inner-container">
+  <div>
+    <section id='img_box_2' class="large">
+      <%=raw @page.content_for(:img_box_2) %>
+    </section>
+  </div>
+
+  <section class='text_box'>
+    <div>
+      Schon frühe „nicht alltägliche Erfahrungen“ die mein Menschenbild, meine Weltsicht und mein ganzes Leben veränderten führten mich zu Stanislav Grof und Karlfried Graf Dürckheim.
+    </div>
+    <%=raw @page.content_for(:text_box_2) %>
+    <p class="internal_link">
+      <a href="/kontakt" title="Kontakt">Kontakt</a>
+    </p>
+  </section>
+  <p class="clearfix"></p>
+</div>

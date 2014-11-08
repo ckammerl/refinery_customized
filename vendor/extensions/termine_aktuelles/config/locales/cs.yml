@@ -1,0 +1,34 @@
+cs:
+  refinery:
+    plugins:
+      termine_aktuelles:
+        title: Termine Aktuelles
+    termine_aktuelles:
+      admin:
+        termine_aktuelles:
+          actions:
+            create_new: Přidat Termine Aktuelle
+            reorder: Řadit Termine Aktuelles
+            reorder_done: Konec řazení Termine Aktuelles
+          records:
+            title: Termine Aktuelles
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Termine Aktuelles. Zvolte "Přidat Termine Aktuelle" pro přidání prvního termine aktuelle.
+          termine_aktuelle:
+            view_live_html: Zobrazit náhled termine aktuelle<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit termine aktuelle
+            delete: Smazat termine aktuelle
+      termine_aktuelles:
+        show:
+          other: Další Termine Aktuelles
+  activerecord:
+    attributes:
+      'refinery/termine_aktuelles/termine_aktuelle':
+        title: Title
+        subtitle: Subtitle
+        location: Location
+        description: Description
+        start_date: Start Date
+        end_date: End Date
+        start_time: Start Time
+        end_time: End Time

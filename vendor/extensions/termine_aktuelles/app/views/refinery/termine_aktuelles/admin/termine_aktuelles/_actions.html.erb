@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::TermineAktuelles::Admin::TermineAktuellesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.termine_aktuelles_admin_termine_aktuelles_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_termine_aktuelles_admin_termine_aktuelle_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::TermineAktuelles::Admin::TermineAktuellesController.sortable? && ::Refinery::TermineAktuelles::TermineAktuelle.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Termine Aktuelles"),
+                 refinery.termine_aktuelles_admin_termine_aktuelles_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Termine Aktuelles"),
+                 refinery.termine_aktuelles_admin_termine_aktuelles_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

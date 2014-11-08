@@ -1,0 +1,34 @@
+tr:
+  refinery:
+    plugins:
+      termine_aktuelles:
+        title: Termine Aktuelles
+    termine_aktuelles:
+      admin:
+        termine_aktuelles:
+          actions:
+            create_new: Yeni Ekle Termine Aktuelle
+            reorder: Tekrar sirala Termine Aktuelles
+            reorder_done: Tekrar siralama tamamlandiTermine Aktuelles
+          records:
+            title: Termine Aktuelles
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Termine Aktuelles yok henuz.  Tikla "Yeni Ekle Termine Aktuelle" eklemek senin ilk termine aktuelle.
+          termine_aktuelle:
+            view_live_html: Bunu canlu termine aktuelle goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle termine aktuelle
+            delete: Bunu Sil termine aktuelle sonsuza dek
+      termine_aktuelles:
+        show:
+          other: Diger Termine Aktuelles
+  activerecord:
+    attributes:
+      'refinery/termine_aktuelles/termine_aktuelle':
+        title: Title
+        subtitle: Subtitle
+        location: Location
+        description: Description
+        start_date: Start Date
+        end_date: End Date
+        start_time: Start Time
+        end_time: End Time
