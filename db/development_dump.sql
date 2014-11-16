@@ -1,15 +1,4 @@
 BEGIN TRANSACTION;
-CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
-INSERT INTO "schema_migrations" VALUES('20140929231123');
-INSERT INTO "schema_migrations" VALUES('20140929231124');
-INSERT INTO "schema_migrations" VALUES('20140929231125');
-INSERT INTO "schema_migrations" VALUES('20140929231128');
-INSERT INTO "schema_migrations" VALUES('20140929231130');
-INSERT INTO "schema_migrations" VALUES('20140929231131');
-INSERT INTO "schema_migrations" VALUES('20140929231133');
-INSERT INTO "schema_migrations" VALUES('20140929231134');
-INSERT INTO "schema_migrations" VALUES('20141027233626');
-INSERT INTO "schema_migrations" VALUES('20141028030155');
 CREATE TABLE "refinery_roles_users" ("user_id" integer, "role_id" integer);
 INSERT INTO "refinery_roles_users" VALUES(1,1);
 INSERT INTO "refinery_roles_users" VALUES(1,2);
