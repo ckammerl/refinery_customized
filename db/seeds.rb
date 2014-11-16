@@ -13,3 +13,20 @@ Refinery::Pages::Engine.load_seed
 
 # Added by Refinery CMS TermineAktuelles extension
 Refinery::TermineAktuelles::Engine.load_seed
+
+
+
+  connection = ActiveRecord::Base.connection
+  connection.tables.each do |table|
+    connection.execute("TRUNCATE #{table}") unless table == "schema_migrations"
+  end
+
+  sql = File.read('db/development_dump.sql')
+  statements = sql.split(/;$/)
+  x = statements.pop
+
+  ActiveRecord::Base.transaction do
+    statements.each do |statement|
+      connection.execute(statement)
+    end
+  end
