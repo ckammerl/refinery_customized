@@ -1,5 +1,3 @@
-
-PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
 INSERT INTO "schema_migrations" VALUES('20140929231123');
