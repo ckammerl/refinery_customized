@@ -1,11 +1,8 @@
 BEGIN TRANSACTION;
-CREATE TABLE "refinery_roles_users" ("user_id" integer, "role_id" integer);
 INSERT INTO "refinery_roles_users" VALUES(1,1);
 INSERT INTO "refinery_roles_users" VALUES(1,2);
-CREATE TABLE "refinery_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255));
 INSERT INTO "refinery_roles" VALUES(1,'Refinery');
 INSERT INTO "refinery_roles" VALUES(2,'Superuser');
-CREATE TABLE "refinery_user_plugins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar(255), "position" integer);
 INSERT INTO "refinery_user_plugins" VALUES(1,1,'refinery_users',2);
 INSERT INTO "refinery_user_plugins" VALUES(2,1,'refinery_dashboard',3);
 INSERT INTO "refinery_user_plugins" VALUES(3,1,'refinery_images',1);
@@ -13,10 +10,7 @@ INSERT INTO "refinery_user_plugins" VALUES(4,1,'refinery_files',4);
 INSERT INTO "refinery_user_plugins" VALUES(5,1,'refinery_pages',0);
 INSERT INTO "refinery_user_plugins" VALUES(14,1,'termine_aktuelles',13);
 INSERT INTO "refinery_user_plugins" VALUES(15,1,'refinerycms-termine_aktuelles',14);
-CREATE TABLE "refinery_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "encrypted_password" varchar(255) NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "sign_in_count" integer, "remember_created_at" datetime, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "slug" varchar(255));
 INSERT INTO "refinery_users" VALUES(1,'admin','christiane@kammerl.com','$2a$10$Qit36nsgOq1KQNZvdkp/0u1P74/OfwyDmByfJogKAx/v4ACwSnGS.','2014-10-31 00:20:24.261565','2014-09-29 23:13:44.351612','127.0.0.1','127.0.0.1',2,NULL,NULL,NULL,'2014-09-29 23:13:44.270689','2014-10-31 00:20:24.262664','admin');
-CREATE TABLE "refinery_resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "file_mime_type" varchar(255), "file_name" varchar(255), "file_size" integer, "file_uid" varchar(255), "file_ext" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-CREATE TABLE "refinery_page_parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "refinery_page_id" integer, "title" varchar(255), "body" text, "position" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "refinery_page_parts" VALUES(1,1,'Body','<img src="/system/images/W1siZiIsIjIwMTQvMTAvMDcvMTdfMDRfNDRfNzU3X2hvbWVfYmFtYnVzLnBuZyJdXQ/home_bambus.png" title="Home Bambus" alt="Home Bambus" data-rel="225x255" />
 
 ',0,'2014-09-29 23:11:41.723648','2014-10-29 00:40:54.945975');
@@ -166,7 +160,6 @@ INSERT INTO "refinery_page_parts" VALUES(207,13,'subtitle','<div>Lorem ipsum</di
 INSERT INTO "refinery_page_parts" VALUES(208,15,'title','<h3>Verluste und Trauer</h3>',3,'2014-10-30 23:54:52.788050','2014-10-30 23:55:42.147357');
 INSERT INTO "refinery_page_parts" VALUES(209,15,'subtitle','<div>Lorem ipsum</div>',4,'2014-10-30 23:54:52.793141','2014-10-30 23:55:42.150423');
 INSERT INTO "refinery_page_parts" VALUES(210,13,'title','<h3>Wer bin ich</h3>',3,'2014-10-30 23:56:43.466788','2014-10-30 23:56:43.489165');
-CREATE TABLE "refinery_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer, "path" varchar(255), "slug" varchar(255), "show_in_menu" boolean DEFAULT 't', "link_url" varchar(255), "menu_match" varchar(255), "deletable" boolean DEFAULT 't', "draft" boolean DEFAULT 'f', "skip_to_first_child" boolean DEFAULT 'f', "lft" integer, "rgt" integer, "depth" integer, "view_template" varchar(255), "layout_template" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "refinery_pages" VALUES(1,NULL,NULL,'home','t','/','^/$','f','f','f',1,4,0,'home',NULL,'2014-09-29 23:11:41.583355','2014-09-30 21:17:10.921557');
 INSERT INTO "refinery_pages" VALUES(2,1,NULL,'page-not-found','f',NULL,'^/404$','f','f','f',2,3,1,NULL,NULL,'2014-09-29 23:11:41.780842','2014-09-29 23:11:41.780842');
 INSERT INTO "refinery_pages" VALUES(3,NULL,NULL,'einzelarbeit-page','t','',NULL,'t','f','t',5,10,0,'show',NULL,'2014-09-29 23:11:41.874640','2014-10-14 18:44:48.335723');
@@ -181,7 +174,6 @@ INSERT INTO "refinery_pages" VALUES(13,4,NULL,'wer-bin-ich','t','',NULL,'t','f',
 INSERT INTO "refinery_pages" VALUES(14,4,NULL,'holotropes_atmen','t','',NULL,'t','f','f',16,17,1,'gruppen_holotrop',NULL,'2014-10-14 18:50:12.587224','2014-10-30 20:59:54.598709');
 INSERT INTO "refinery_pages" VALUES(15,4,NULL,'verluste-und-trauer','t','',NULL,'t','f','f',18,19,1,'gruppen_wer_bin_ich',NULL,'2014-10-14 18:50:27.878286','2014-10-30 23:55:42.123169');
 INSERT INTO "refinery_pages" VALUES(19,NULL,NULL,'termine-aktuelles--2','t','/termine_aktuelles','^/termine_aktuelles(/|/.+?|)$','f','f','f',23,24,0,'show',NULL,'2014-10-28 03:05:23.253184','2014-10-28 03:06:41.921470');
-CREATE TABLE "refinery_page_part_translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "refinery_page_part_id" integer, "locale" varchar(255) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "body" text);
 INSERT INTO "refinery_page_part_translations" VALUES(1,1,'en','2014-09-29 23:11:41.738759','2014-10-29 00:40:54.947960','<img src="/system/images/W1siZiIsIjIwMTQvMTAvMDcvMTdfMDRfNDRfNzU3X2hvbWVfYmFtYnVzLnBuZyJdXQ/home_bambus.png" title="Home Bambus" alt="Home Bambus" data-rel="225x255" />
 
 ');
@@ -331,7 +323,6 @@ INSERT INTO "refinery_page_part_translations" VALUES(207,207,'en','2014-10-30 23
 INSERT INTO "refinery_page_part_translations" VALUES(208,208,'en','2014-10-30 23:54:52.791130','2014-10-30 23:54:52.791130','<h3>Verluste und Trauer</h3>');
 INSERT INTO "refinery_page_part_translations" VALUES(209,209,'en','2014-10-30 23:54:52.795212','2014-10-30 23:54:52.795212','<div>Lorem ipsum</div>');
 INSERT INTO "refinery_page_part_translations" VALUES(210,210,'en','2014-10-30 23:56:43.468978','2014-10-30 23:56:43.468978','<h3>Wer bin ich</h3>');
-CREATE TABLE "refinery_page_translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "refinery_page_id" integer, "locale" varchar(255) NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "title" varchar(255), "custom_slug" varchar(255), "menu_title" varchar(255), "slug" varchar(255));
 INSERT INTO "refinery_page_translations" VALUES(1,1,'en','2014-09-29 23:11:41.539259','2014-09-30 21:17:10.926382','Home',NULL,'Home','home');
 INSERT INTO "refinery_page_translations" VALUES(2,2,'en','2014-09-29 23:11:41.774053','2014-09-29 23:11:41.783327','Page not found',NULL,NULL,'page-not-found');
 INSERT INTO "refinery_page_translations" VALUES(3,3,'en','2014-09-29 23:11:41.870406','2014-10-14 18:44:48.337903','Einzelarbeit',NULL,'','einzelarbeit-page');
@@ -346,7 +337,6 @@ INSERT INTO "refinery_page_translations" VALUES(13,13,'en','2014-10-14 18:46:21.
 INSERT INTO "refinery_page_translations" VALUES(14,14,'en','2014-10-14 18:50:12.583217','2014-10-30 20:59:54.601008','Holotropes_Atmen',NULL,'','holotropes_atmen');
 INSERT INTO "refinery_page_translations" VALUES(15,15,'en','2014-10-14 18:50:27.874004','2014-10-14 18:50:27.880670','Verluste und Trauer',NULL,'','verluste-und-trauer');
 INSERT INTO "refinery_page_translations" VALUES(19,19,'en','2014-10-28 03:05:23.203830','2014-10-28 03:06:41.924068','Termine - Aktuelles',NULL,'','termine-aktuelles--2');
-CREATE TABLE "refinery_images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_mime_type" varchar(255), "image_name" varchar(255), "image_size" integer, "image_width" integer, "image_height" integer, "image_uid" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "refinery_images" VALUES(3,'image/png','draft_banner.png',69240,828,205,'2014/09/29/18_22_40_207_draft_banner.png','2014-09-30 01:22:40.209323','2014-09-30 01:22:40.209323');
 INSERT INTO "refinery_images" VALUES(12,'image/png','IT_1.png',304805,465,305,'2014/10/07/14_26_54_263_IT_1.png','2014-10-07 21:26:54.265689','2014-10-07 21:26:54.265689');
 INSERT INTO "refinery_images" VALUES(13,'image/png','IT_2.png',266806,465,305,'2014/10/07/14_27_02_19_IT_2.png','2014-10-07 21:27:02.020827','2014-10-07 21:27:02.020827');
@@ -362,7 +352,6 @@ INSERT INTO "refinery_images" VALUES(23,'image/png','holotrop1.png',180375,300,3
 INSERT INTO "refinery_images" VALUES(24,'image/png','holotrop2.png',105407,252,242,'2014/10/14/13_08_46_175_holotrop2.png','2014-10-14 20:08:46.176604','2014-10-14 20:08:46.176604');
 INSERT INTO "refinery_images" VALUES(25,'image/png','mschemmer.png',174190,362,307,'2014/10/14/14_38_38_311_mschemmer.png','2014-10-14 21:38:38.312667','2014-10-14 21:38:38.312667');
 INSERT INTO "refinery_images" VALUES(26,'image/png','kontact_schemmer.png',298771,300,397,'2014/10/14/14_39_03_319_kontact_schemmer.png','2014-10-14 21:39:03.320635','2014-10-14 21:39:03.320635');
-CREATE TABLE "seo_meta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "seo_meta_id" integer, "seo_meta_type" varchar(255), "browser_title" varchar(255), "meta_description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "seo_meta" VALUES(1,1,'Refinery::Page::Translation','','','2014-09-29 23:11:41.577252','2014-09-30 00:47:26.070448');
 INSERT INTO "seo_meta" VALUES(2,2,'Refinery::Page::Translation',NULL,NULL,'2014-09-29 23:11:41.777529','2014-09-29 23:11:41.777529');
 INSERT INTO "seo_meta" VALUES(3,3,'Refinery::Page::Translation','','','2014-09-29 23:11:41.872704','2014-09-29 23:30:45.641708');
@@ -377,7 +366,6 @@ INSERT INTO "seo_meta" VALUES(13,13,'Refinery::Page::Translation','','','2014-10
 INSERT INTO "seo_meta" VALUES(14,14,'Refinery::Page::Translation','','','2014-10-14 18:50:12.584764','2014-10-14 18:50:12.584764');
 INSERT INTO "seo_meta" VALUES(15,15,'Refinery::Page::Translation','','','2014-10-14 18:50:27.875892','2014-10-14 18:50:27.875892');
 INSERT INTO "seo_meta" VALUES(19,19,'Refinery::Page::Translation','','','2014-10-28 03:05:23.249080','2014-10-28 03:06:41.925070');
-CREATE TABLE "refinery_termine_aktuelles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "subtitle" varchar(255), "location" varchar(255), "description" text, "start_date" date, "end_date" date, "start_time" time, "end_time" time, "position" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 INSERT INTO "refinery_termine_aktuelles" VALUES(1,'Jahreswechsel im Kloster ','ZEN – Meditation','Kloster Vinnenberg                                        ','','2014-12-29','2015-01-01','2000-01-01 18:00:00.000000','2000-01-01 18:00:00.000000',0,'2014-10-28 03:07:43.029917','2014-10-31 20:53:57.963344');
 INSERT INTO "refinery_termine_aktuelles" VALUES(2,'Meditation im Stil des ZEN ','Sitzen in Stille und Gehmeditation','Benediktshof Münster','<p>Zazen – Kinhin – Zazen</p>','2015-01-07','2015-01-07','2014-10-28 20:00:00.000000','2014-10-28 21:00:00.000000',1,'2014-10-28 03:08:51.996083','2014-10-28 03:08:51.996083');
 INSERT INTO "refinery_termine_aktuelles" VALUES(3,'Seelenbilder Ausdrucksmalen','Bildprozess und Bildbesprechung','Benediktshof Münster','<p>Bilder sind die Sprache der Seele und helfen uns einen vertiefenden und verständnisvollen Umgang mit uns selbst im Prozess der Selbstfindung und Selbstwerdung zu finden.</p>','2015-01-11','2015-01-11','2014-10-28 09:00:00.000000','2014-10-28 18:00:00.000000',2,'2014-10-28 03:31:29.028326','2014-10-28 23:26:26.520789');
@@ -417,24 +405,4 @@ INSERT INTO "sqlite_sequence" VALUES('refinery_users',1);
 INSERT INTO "sqlite_sequence" VALUES('refinery_user_plugins',15);
 INSERT INTO "sqlite_sequence" VALUES('refinery_images',26);
 INSERT INTO "sqlite_sequence" VALUES('refinery_termine_aktuelles',30);
-CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
-CREATE INDEX "index_refinery_roles_users_on_role_id_and_user_id" ON "refinery_roles_users" ("role_id", "user_id");
-CREATE INDEX "index_refinery_roles_users_on_user_id_and_role_id" ON "refinery_roles_users" ("user_id", "role_id");
-CREATE INDEX "index_refinery_user_plugins_on_name" ON "refinery_user_plugins" ("name");
-CREATE UNIQUE INDEX "index_refinery_user_plugins_on_user_id_and_name" ON "refinery_user_plugins" ("user_id", "name");
-CREATE INDEX "index_refinery_users_on_id" ON "refinery_users" ("id");
-CREATE INDEX "index_refinery_users_on_slug" ON "refinery_users" ("slug");
-CREATE INDEX "index_refinery_page_parts_on_id" ON "refinery_page_parts" ("id");
-CREATE INDEX "index_refinery_page_parts_on_refinery_page_id" ON "refinery_page_parts" ("refinery_page_id");
-CREATE INDEX "index_refinery_pages_on_depth" ON "refinery_pages" ("depth");
-CREATE INDEX "index_refinery_pages_on_id" ON "refinery_pages" ("id");
-CREATE INDEX "index_refinery_pages_on_lft" ON "refinery_pages" ("lft");
-CREATE INDEX "index_refinery_pages_on_parent_id" ON "refinery_pages" ("parent_id");
-CREATE INDEX "index_refinery_pages_on_rgt" ON "refinery_pages" ("rgt");
-CREATE INDEX "index_refinery_page_part_translations_on_refinery_page_part_id" ON "refinery_page_part_translations" ("refinery_page_part_id");
-CREATE INDEX "index_refinery_page_part_translations_on_locale" ON "refinery_page_part_translations" ("locale");
-CREATE INDEX "index_refinery_page_translations_on_refinery_page_id" ON "refinery_page_translations" ("refinery_page_id");
-CREATE INDEX "index_refinery_page_translations_on_locale" ON "refinery_page_translations" ("locale");
-CREATE INDEX "index_seo_meta_on_id" ON "seo_meta" ("id");
-CREATE INDEX "id_type_index_on_seo_meta" ON "seo_meta" ("seo_meta_id", "seo_meta_type");
 COMMIT;
