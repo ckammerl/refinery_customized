@@ -7,6 +7,7 @@ gem 'rails', '3.2.18'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'debugger'
 end
 
 group :production do
@@ -39,8 +40,6 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'debugger'
 
 # Refinery CMS
 gem 'refinerycms', '~> 2.1.0'
