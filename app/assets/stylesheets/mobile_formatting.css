@@ -1,0 +1,286 @@
+@import url('refinery/formatting.css');
+/*
+  Override default refinery formatting below.
+  Formatting applies to backend WYSIWYG editors and all frontend.
+*/
+
+
+@media only screen and (max-width : 480px) {
+
+  body {
+    font-size: 13px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav {
+    position: relative;
+    margin-left: 0;
+  }
+
+  .logo {
+    max-height: 100px;
+  }
+
+  #menu ul {
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: 0;
+    width: 130px;
+    padding: 5px 0;
+    margin-left: 10px;
+    background-color: #DADADA;
+    border-radius: 3px;
+  }
+
+  #menu li {
+    display: none; /*hide all <li>*/
+    margin: 0;
+  }
+
+
+  #menu li.selected {
+    display: block; /*show selected <li> item*/
+  }
+
+
+  #menu a {
+    display: block;
+    padding: 5px;
+    text-align: left;
+    color: #000;
+    font-size: 10px;
+  }
+
+  #menu .selected a {
+    background: none;
+    color: #b20045;
+  }
+
+
+/* on menu hover */
+  #menu ul:hover {
+    background-color: none;
+  }
+
+  #menu ul:hover li {
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  #menu ul:hover .selected {
+    color: #b20045;
+  }
+
+
+  #menu ul li ul {
+    display: block;
+    margin-left: 110px;
+    color: #000;
+  }
+
+
+  #menu ul li ul li {
+    display: block;
+    background-color: #DADADA;
+  }
+
+  #menu ul li.selected ul a {
+    color: #000;
+  }
+
+  #menu ul li.selected ul li:hover a {
+    color: #b20045;
+  }
+
+
+  #menu ul li ul:hover li {
+    display: block;
+    background-color: #DADADA;
+   /* margin: 0 0 5px;*/
+  }
+
+
+
+
+ /*index*/
+
+  .home-container {
+    display: table;
+    margin: 10px;
+  }
+
+  .home-img {
+    display: table-cell;
+    background-color: transparent;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 60px;
+  }
+
+  .home-img img {
+    width: 185px;
+    height: 306px;
+  }
+
+  .home-quote {
+    display: table-cell;
+    height: 410px;
+    vertical-align: middle;
+    padding-left: 5px;
+    color: #b20045;
+    background-color: transparent;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+
+  #quote-name {
+    font-size: 10px;
+  }
+
+
+ /*pages content*/
+
+  .container {
+    display: table;
+  }
+
+  #placeholder {
+    display: none;
+  }
+
+  #placeholder .big {
+    display: none;
+  }
+
+  #headline {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-top: 60px;
+  }
+
+  .inner-container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #img_box_1, #img_box_2, #img_box_3  {
+    /*display: table-cell;
+    width: 105px;
+    height: 50px;*/
+    display: none;
+  }
+
+  /*img*/
+  .small img {
+   /* width: 105px;
+    height: 75px;
+    padding-right: 10px;
+    padding-left: 10px;*/
+    display: none;
+  }
+
+  /*img*/
+  .large img {
+/*    width: 105px;
+    height: 150px;
+    padding-right: 10px;
+    padding-left: 10px;*/
+    display: none
+  }
+
+
+  .text_box {
+    padding: 10px;
+
+  }
+
+  /*text box headline*/
+
+  h3, .gruppen_title {
+    font-size: 12px;
+  }
+
+
+  .internal_link a {
+    color: #525152;
+  }
+
+  .internal_link a.on, .internal_link a:hover {
+    color: #b20045;
+  }
+
+  #title-source {
+    font-size: 12px;
+  }
+
+
+
+  /*gruppen*/
+
+  .gruppen_source {
+    font-size: 12px;
+  }
+
+
+  #gruppen_holotrop_txt_img_wrapper li.img {
+   display: none;
+  }
+
+  #gruppen_holotrop_txt_img_wrapper li.txt {
+    width: inherit;
+    padding: 0;
+  }
+
+  /*termine_aktuelles*/
+
+  #event_headline {
+    font-size: 13px;
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+
+
+  #body_content.no_side_body #event_headline {
+    display: none;
+  }
+
+  #body_content_title {
+    display: none;
+  }
+
+
+
+  #body .inner ul {
+    width: 95%;
+    display: table-header-group;
+  }
+
+  #body .inner li.month_of_events,
+  #event_placeholder {
+    display: none;
+  }
+
+  #body .inner li.content_right {
+    width: 40%;
+  }
+
+
+  #body .inner li.content_left {
+    width: 40%;
+  }
+
+
+ /*footer*/
+
+  ul.footer-address {
+    display: none;
+  }
+
+
+}
+
