@@ -394,15 +394,4 @@ INSERT INTO "refinery_termine_aktuelles" VALUES(27,'Seelenbilder Ausdrucksmalen 
 INSERT INTO "refinery_termine_aktuelles" VALUES(28,'Verluste und Trauer auf meinem Lebensweg ','Trauerbegleitung','Benediktshof Münster','<p>Für Menschen, die einen Ort suchen ihrer Trauer Raum zu geben </p>','2015-11-27','2015-11-29','2014-10-28 18:00:00.000000','2014-10-28 18:00:00.000000',25,'2014-10-28 20:37:02.918189','2014-10-29 00:28:26.588604');
 INSERT INTO "refinery_termine_aktuelles" VALUES(29,'Seelenbilder Ausdrucksmalen               ','Bildprozess und Bildbesprechung','Benediktshof Münster','','2015-12-06','2015-12-06','2014-10-28 09:00:00.000000','2014-10-28 18:00:00.000000',26,'2014-10-28 20:37:51.681727','2014-10-28 23:39:17.152319');
 INSERT INTO "refinery_termine_aktuelles" VALUES(30,'Jahreswechsel im Kloster','','Kloster Vinnenberg                                        ','','2015-12-29','2016-01-01','2014-10-28 16:30:00.000000','2014-10-28 16:30:00.000000',27,'2014-10-28 20:39:58.877239','2014-10-28 23:25:35.729037');
-DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('refinery_page_translations',19);
-INSERT INTO "sqlite_sequence" VALUES('seo_meta',19);
-INSERT INTO "sqlite_sequence" VALUES('refinery_pages',19);
-INSERT INTO "sqlite_sequence" VALUES('refinery_page_parts',211);
-INSERT INTO "sqlite_sequence" VALUES('refinery_page_part_translations',211);
-INSERT INTO "sqlite_sequence" VALUES('refinery_roles',2);
-INSERT INTO "sqlite_sequence" VALUES('refinery_users',1);
-INSERT INTO "sqlite_sequence" VALUES('refinery_user_plugins',15);
-INSERT INTO "sqlite_sequence" VALUES('refinery_images',26);
-INSERT INTO "sqlite_sequence" VALUES('refinery_termine_aktuelles',30);
 COMMIT;
